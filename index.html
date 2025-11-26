@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — Srilakshmi Ch Template</title>
+  <style>
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --accent: #06b6d4;
+      --muted: #9aa4b2;
+      --glass: rgba(255, 255, 255, 0.04);
+      --maxw: 1100px;
+      --radius: 12px;
+      --fw-bold: 700;
+      --fw-normal: 400;
+      --transition: 300ms cubic-bezier(.2, .9, .3, 1);
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #081025 0%, #071022 60%), var(--bg);
+      color: #e6eef6;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      position: sticky;
+      top: 16px;
+      z-index: 40
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      background: transparent;
+      padding: 8px 12px;
+      border-radius: 999px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700
+    }
+
+    .brand .dot {
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 50%
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: var(--transition)
+    }
+
+    nav a:hover {
+      color: #fff;
+      background: var(--glass)
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 32px;
+      align-items: center;
+      padding: 48px 0;
+    }
+
+    .intro h1 {
+      font-size: clamp(26px, 4vw, 40px);
+      margin: 0 0 12px
+    }
+
+    .intro p {
+      color: var(--muted);
+      margin: 0 0 18px;
+      max-width: 60ch
+    }
+
+    .cta {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px
+    }
+
+    .btn {
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: transparent;
+      cursor: pointer;
+      color: var(--accent);
+      font-weight: 600
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #042023;
+      border: 0
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      padding: 18px;
+      border-radius: var(--radius);
+      box-shadow: 0 6px 20px rgba(2, 6, 23, 0.6);
+    }
+
+    /* about */
+    .about {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      margin: 48px 0
+    }
+
+    .about .profile {
+      width: 300px;
+      min-width: 220px;
+    }
+
+    .avatar {
+      width: 100%;
+      border-radius: 12px;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+      background: linear-gradient(135deg, #083344, #02303a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.12);
+      font-size: 28px;
+    }
+
+    .about .bio {
+      flex: 1
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px
+    }
+
+    .skill {
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--muted);
+      font-weight: 600
+    }
+
+    /* projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 18px
+    }
+
+    .proj {
+      padding: 16px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      transition: var(--transition)
+    }
+
+    .proj:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(2, 6, 23, 0.6)
+    }
+
+    .proj h4 {
+      margin: 0 0 10px
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    /* contact */
+    footer {
+      margin: 48px 0 120px
+    }
+
+    .contact-card {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      padding: 18px;
+      border-radius: 12px;
+      background: var(--card)
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px
+    }
+
+    .chip {
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--muted)
+    }
+
+    /* small */
+    @media (max-width:880px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center
+      }
+
+      .about {
+        flex-direction: column;
+        align-items: center
+      }
+
+      .profile {
+        width: 100%
+      }
+
+      nav {
+        display: none
+      }
+    }
+
+    /* subtle reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: var(--transition)
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: none
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="nav">
+        <div class="brand">
+          <div class="dot"></div>
+          <div>Srilakshmi Ch</div>
+        </div>
+        <nav aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="intro card reveal" id="heroIntro">
+        <h1>Hi — I’m Srilakshmi.<br><span style="color:var(--accent)">Full stack Developer</span> building Powerful Dotnet apps.</h1>
+        <p>I design and build web applications with focus on performance, accessibility and clean code. I enjoy solving Challenging problems and Providing reliable features.</p>
+        <div class="cta">
+          <button class="btn primary" onclick="scrollToId('contact')">Hire me</button>
+          <a class="btn" href="#projects">See projects</a>
+        </div>
+      </div>
+
+      <aside class="card reveal" id="heroCard">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-size:13px;color:var(--muted)">Experience</div>
+              <div style="font-weight:700">10+ years</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:13px;color:var(--muted)">Location</div>
+              <div style="font-weight:700">Bangalore</div>
+            </div>
+          </div>
+
+          <div class="chip">Angular • .NET • JavaScript</div>
+          <div class="chip">React • HTML/CSS • Azure DevOps</div>
+          <div style="margin-top:8px;color:var(--muted);font-size:13px">Open full-time</div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <div class="profile card reveal">
+        <div class="avatar">
+          <!-- replace with <img src="..." alt="Srilakshmi"> -->
+          Your Photo
+        </div>
+        <div style="margin-top:12px;color:var(--muted);font-size:13px">Fullstack Developer • Dotnet AI enthusiast</div>
+      </div>
+
+      <div class="bio card reveal">
+        <h3>About Me</h3>
+        <p style="color:var(--muted)">I’m a .NET & fullstack developer who loves turning applications into fast, accessible, and maintainable apps. I focus on building components that scale and integrating simple, reliable backend APIs.</p>
+
+        <div class="skills">
+          <span class="skill">Angular</span>
+          <span class="skill">.NET / C#</span>
+          <span class="skill">TypeScript</span>
+          <span class="skill">Responsive UI</span>
+          <span class="skill">Performance</span>
+        </div>
+
+        <div style="margin-top:18px;display:flex;gap:12px">
+          <a class="btn" href="#projects">View Work</a>
+          <a class="btn" href="https://www.linkedin.com/in/srilakshmichiluvuri/">Download CV</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h3>Projects</h3>
+      <div class="projects">
+        <article class="proj reveal">
+          <h4>School Portal</h4>
+          <div class="meta">Angular • .NET • Payment integration</div>
+          <p style="color:var(--muted)">A complete school management portal with admissions, fee management and notifications.</p>
+        </article>
+
+        <article class="proj reveal">
+          <h4>E-commerce Sample</h4>
+          <div class="meta">Angular • Node • Stripe</div>
+          <p style="color:var(--muted)">E-commerce site for silver & medicine sample store with product management and cart flow.</p>
+        </article>
+
+        <article class="proj reveal">
+          <h4>Personal Blog</h4>
+          <div class="meta">Next.js • Markdown</div>
+          <p style="color:var(--muted)">A lightweight blog to publish stories and technical writeups.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <footer id="contact">
+      <h3>Contact</h3>
+      <div class="contact-card reveal">
+        <div style="flex:1">
+          <div style="font-weight:700">Srilakshmi Ch</div>
+          <div style="color:var(--muted);margin-top:6px">Frontend & .NET Developer</div>
+          <div style="margin-top:12px;color:var(--muted)">Email: hello@example.com</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+          <div class="socials">
+            <a href="#" class="chip">GitHub</a>
+            <a href="#" class="chip">LinkedIn</a>
+          </div>
+          <div><button class="btn primary" onclick="scrollToId('about')">Let's Talk</button></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // smooth scrolling helper
+    function scrollToId(id) {
+      const el = document.getElementById(id);
+      if (!el) {
+        window.location.hash = id;
+        return;
+      }
+      el.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    // reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('show');
+      });
+    }, {
+      threshold: 0.12
+    });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    // small improvement: allow keyboard nav to anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        const id = a.getAttribute('href').slice(1);
+        scrollToId(id);
+      });
+    });
+  </script>
+</body>
+
+</html>
